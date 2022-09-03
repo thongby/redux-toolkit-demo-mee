@@ -9,9 +9,12 @@ export const attractionApi = createApi({
     getAllAttractions: builder.query({
       query: () => `th/attractions`,
     }),
+    getAttractionByID: builder.query({
+        query: (id) => `th/attractions/${id}`,
+      }),
   }),
 })
 
 // Export hooks for usage in functional components, which are
 // auto-generated based on the defined endpoints
-export const { useGetAllAttractionsQuery } = attractionApi
+export const { useGetAllAttractionsQuery, useGetAttractionByIDQuery } = attractionApi
